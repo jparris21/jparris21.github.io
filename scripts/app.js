@@ -1,17 +1,53 @@
 "use strict";
 
-//IIFE IMMEDIATELY INVOKED FUNCTIONAL EXPRESSION
-(function () {
-    function DisplayHomePage() {
-        console.log("called DisplayHomePage");
-        // Add specific actions for the home page here
+
+// IIFE - Immediately Invoked Functional Expression
+(function(){
+
+
+    function DisplayHomePage(){
+        console.log("Called DisplayHomePage()");
+
+
+        let AboutUsButton = document.getElementById("AboutUsButton");
+        AboutUsButton.addEventListener("click", function(){
+            location.href = "About.html";
+        });
+
+
+        let MainContent = document.getElementsByTagName("main")[0];
+
+
+        let MainParagraph = document.createElement("p");
+
+
+        MainParagraph.setAttribute("id","MainParagraph");
+        MainParagraph.setAttribute("class","mt-3");
+
+
+        MainParagraph.textContent = "This is the first paragraph";
+
+
+        MainContent.appendChild(MainParagraph);
+
+
+        let FirstString = "This is ";
+        let SecondString = `${FirstString}the main paragraph`;
+        MainParagraph.textContent = SecondString;
+        MainContent.appendChild(MainParagraph);
+
+
+        let DocumentBody = document.body;
+
+
+        let Article = document.createElement("article");
+        let articleParagraph = `<p id="ArticleParagraph" class="mt-3">This is my article paragraph</p>`;
+
+
+        Article.setAttribute("class", "container");
+        Article.innerHTML = articleParagraph;
+        DocumentBody.appendChild(Article);
     }
-
-    let AboutUsButton = document.getElementById("AboutUsButton");
-
-    AboutUsButton.addEventListener("click", function () {
-        location.href = "about.html";
-    });
 
     function Start() {
         console.log("App Started");
@@ -20,7 +56,7 @@
             case "home":
                 DisplayHomePage();
                 break;
-            case "products":
+            case "product":
                 console.log("called ProductsPage");
                 // Add specific actions for the product page here
                 break;
