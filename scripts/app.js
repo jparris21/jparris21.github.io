@@ -11,7 +11,7 @@
 
         let AboutUsButton = document.getElementById("AboutUsButton");
         AboutUsButton.addEventListener("click", function(){
-            location.href = "About.html";
+            location.href = "about.html";
         });
 
 
